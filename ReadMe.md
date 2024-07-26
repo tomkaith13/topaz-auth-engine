@@ -1,4 +1,11 @@
-# Deploy Topaz
+# Deploy Engine
+## Deploy using `Makefile`
+Use `make clean` to clean up the containers
+
+Use `make run` ro run the containers
+Use `load-db` to load the manifest and the directory files
+
+## Deploy Topaz Engine using `docker-compose`
 
 - Use this to deploy topaz using docker-compose: https://www.topaz.sh/docs/deployment/docker-compose
 - Make sure u copy over the asset to have a set of resources and users setup. Use it as a template
