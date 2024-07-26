@@ -29,6 +29,10 @@ services:
       - ./certs:/certs
       - ./db:/db
       - ./data:/data
+  app:
+    build: .       # Build the Go app from a Dockerfile in the current directory
+    ports:
+      - 8888:8888  # Expose port 8080 for the Go app
 networks:
   my-network:
     driver: bridge
