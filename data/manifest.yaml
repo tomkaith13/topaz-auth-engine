@@ -36,38 +36,6 @@ types:
       member: user | group#member
 
 
-  # folder represents a collection of documents and/or other folders
-  # folder:
-  #   relations:
-  #     parent: folder
-
-  #     owner:  user
-  #     editor: user | group#member
-  #     viewer: user | group#member
-
-  #   permissions:
-  #     can_share: owner  | parent->can_share
-  #     can_write: editor | can_share | parent->can_write
-  #     can_read:  viewer | can_write | parent->can_read
-
-
-  # # doc represents a document within a folder
-  # doc:
-  #   relations:
-  #     parent: folder
-
-  #     owner:  user
-  #     editor: user | group#member
-  #     viewer: user | user:* | group#member
-  #     agent: user | group#member
-  #     care-giver: user | group#member
-
-  #   permissions:
-  #     can_share:  owner     | parent->can_share
-  #     can_delete: can_share | parent->can_write
-  #     can_write:  editor | care-giver | can_delete | parent->can_write
-  #     can_read:   viewer | agent | care-giver |can_write  | parent->can_read
-
   file:
     relations:
       owner:  user
