@@ -1,0 +1,16 @@
+{
+  "objects": [
+    {
+      "type": "file",
+      "id": "member.claims",
+      "display_name": "member claims",
+      "properties": {}
+    },
+    {
+      "type": "file",
+      "id": "member.journey",
+      "display_name": "member journey",
+      "properties": {}
+    }
+  ]
+}
