@@ -140,3 +140,10 @@ The logs would show up like ![image](decision_logger.png)
 👀 The docs for Decision Logger in Topaz official page is incorrect. The right config syntax can be found here: https://github.com/aserto-dev/topaz/blob/880152f5ec5fa064449525aa1bbf6be3ddd3e2a2/docs/config.md?plain=1#L249
 
 </aside>
+
+
+## The cURL 
+To invoke the `GET /dummy` endpoint with a prefixed body we can use cURL
+```
+curl --location 'localhost:8888/dummy'
+```
