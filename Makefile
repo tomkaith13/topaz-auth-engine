@@ -4,9 +4,11 @@ clean-db:
 	rm -rf ./db/directory.db
 run:
 	docker-compose up --build -d
+restart:
+	make stop && make clean && make run
 stop:
 	docker-compose down
 load-db:
-	docker compose exec topaz ./topaz directory set manifest --no-check -i /data/manifest.yaml & docker compose exec topaz ./topaz directory import --no-check -i -H localhost:9292 -d /data
+	docker compose exec topaz ./topaz directory set manifest --no-check -i /data/manifest.yaml && docker compose exec topaz ./topaz directory import --no-check -i -H localhost:9292 -d /data
 
 
