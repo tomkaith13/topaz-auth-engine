@@ -233,3 +233,12 @@ opa:
       #     polling:
       #       min_delay_seconds: 60
       #       max_delay_seconds: 120
+    plugins:
+      aserto_decision_log:
+        enabled: true
+decision_logger:
+  type: "file"
+  config:
+    log_file_path: /tmp/mytopaz.log
+    max_file_size_mb: 50
+    max_file_count: 2

@@ -95,3 +95,44 @@ Use `load-db` to load the manifest and the directory files
 👀 to clear all data in the DB, simply delete the bold.db instance in the `/db` directory. Restarting the container will create a new instance and then we simply need to reload the manifest, object and relations jsons using the `topaz directory` subcommand inside the container specified in https://www.topaz.sh/docs/deployment/docker-compose#load-sample-directory-data
 
 </aside>
+
+## Decision Logger
+
+To enable a decision logger, we simply enable the following plugin in `opa` section of the config
+
+and add a `decision_logger` config to the end of the config file
+
+```yaml
+opa:
+  instance_id: "-"
+  graceful_shutdown_period_seconds: 2
+  # max_plugin_wait_time_seconds: 30 set as default
+  local_bundles:
+    paths:
+      # []
+      /policies/bundle.tar.gz
+    skip_verification: true
+  config:
+    services:
+      ghcr:
+        url: https://ghcr.io
+        type: "oci"
+        response_header_timeout_seconds: 5
+    bundles:
+    plugins: # The new runtime plugin in OPA
+      aserto_decision_log:
+        enabled: true
+decision_logger: #Finally, the new logs
+  type: "file"
+  config:
+    log_file_path: /tmp/mytopaz.log
+    max_file_size_mb: 50
+    max_file_count: 2
+```
+
+The logs would show up like ![image](decision_logger.png)
+
+<aside>
+👀 The docs for Decision Logger in Topaz official page is incorrect. The right config syntax can be found here: https://github.com/aserto-dev/topaz/blob/880152f5ec5fa064449525aa1bbf6be3ddd3e2a2/docs/config.md?plain=1#L249
+
+</aside>
