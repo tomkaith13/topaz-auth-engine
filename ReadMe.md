@@ -1,0 +1,90 @@
+# Deploy Topaz
+
+- Use this to deploy topaz using docker-compose: https://www.topaz.sh/docs/deployment/docker-compose
+- Make sure u copy over the asset to have a set of resources and users setup. Use it as a template
+- To edit the policy to add your own custom policy try using https://www.topaz.sh/docs/command-line-interface/policy-cli/download directly
+    - you would need first build the create a template using
+    
+    ```bash
+    policy templates apply policy-template
+    ```
+    
+    - We then need to build that policy into an image using https://www.topaz.sh/docs/policies/lifecycle#build
+    - Finally we we need to `export` this image into a tar file using https://www.topaz.sh/docs/command-line-interface/policy-cli/export
+    
+    The output of all that would look something like:
+    
+    ```bash
+    ➜  test-policies git:(main) ✗ policy build ./src                           
+    
+    Created new image.
+    digest: sha256:900c90346bd896cd1fd2af5703212ddfb811568a9631a66f73795f17b3a63ecf
+    
+    Tagging image.
+    reference: docker.io/library/default:latest
+    ➜  test-policies git:(main) ✗ policy images
+    
+      REPOSITORY                        TAG     IMAGE ID      CREATED               SIZE  
+      docker.io/library/default         latest  900c90346bd8  2024-07-26T13:51:17Z  748B  
+      docker.io/my-org/my-policy        v0.1.1  3d179cb14a7d  2024-07-26T13:46:02Z  750B  
+      docker.io/bibin-org/bibin-policy  v0.1.1  d91ddd68dfe3  2024-07-05T14:43:51Z  762B  
+      docker.io/bibin-org/bibin-policy  latest  d91ddd68dfe3  2024-07-05T14:43:51Z  762B  
+    ➜  test-policies git:(main) ✗ policy save docker.io/my-org/my-policy:v0.1.1
+    
+    Resolved ref [docker.io/my-org/my-policy:v0.1.1].
+    digest: sha256:7d94e2a7fb79807bf1d672b2347eee6fd902a4ffdb537a75dc8691a91ba0c161
+    ➜  test-policies git:(main) ✗ ls
+    README.md     bundle.tar.gz src
+    ```
+    
+    - We then we need to edit the copy this tar over to the `policies` dir.
+    - Then edit the `opa` section of the local.yaml file in the config dir to add local bundles like this example below and comment out the todo bundle coming from Aserto’s GHCR.
+    
+    ```yaml
+    opa:
+      instance_id: "-"
+      graceful_shutdown_period_seconds: 2
+      # max_plugin_wait_time_seconds: 30 set as default
+      local_bundles:
+        paths:
+          /policies/bundle.tar.gz
+        skip_verification: true
+      config:
+        services:
+          ghcr:
+            url: https://ghcr.io
+            type: "oci"
+            response_header_timeout_seconds: 5
+        bundles:
+          # todo:
+          #   service: ghcr
+          #   resource: "ghcr.io/aserto-policies/policy-todo:3.0.0"
+          #   persist: false
+          #   config:
+          #     polling:
+          #       min_delay_seconds: 60
+          #       max_delay_seconds: 120
+    
+    ```
+    
+
+<aside>
+💡 For other config.yaml examples: look at this https://github.com/aserto-dev/topaz/tree/main/docs/examples. Also see https://www.topaz.sh/docs/policies/configuration#configuring-private-registries that talks about how to setup access to private bundles.  To understand the full meaning of the config file, see https://github.com/aserto-dev/topaz/blob/main/docs/config.md
+
+</aside>
+
+- Next, hit `docker-compose up` to have the container running
+- Finally, we may need to add Objects, Relations or Permissions to the Directory module in Topaz which allows us to create the various entities there exists.
+    - For this, we need to edit the `manifest` and the `data/*.json` files to edit the graph and its properties
+    - Then, we need to issue the following commands to apply it
+    
+    ```bash
+    docker compose exec topaz ./topaz directory set manifest --no-check -i /data/manifest.yaml
+    docker compose exec topaz ./topaz directory import --no-check -i -H localhost:9292 -d /data
+    ```
+    
+
+<aside>
+👀 to clear all data in the DB, simply delete the bold.db instance in the `/db` directory. Restarting the container will create a new instance and then we simply need to reload the manifest, object and relations jsons using the `topaz directory` subcommand inside the container specified in https://www.topaz.sh/docs/deployment/docker-compose#load-sample-directory-data
+
+</aside>
