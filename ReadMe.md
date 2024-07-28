@@ -1,8 +1,8 @@
-# Deploy Topaz Auth Engine
+# Topaz Auth Engine Sidecar
 ## Introduction
 > Topaz is an open-source, self-hosted, fine-grained access control service for modern cloud applications. It uses the Open Policy Agent (OPA) as its decision engine, and provides a built-in directory that implements the Google Zanzibar data model.
 
-This repo deploys an `app` container and the `topaz` container to do authz checks.
+This repo deploys an `app` container along with the `topaz` container to do authz checks. The `topaz` container will be deployed as a standalone microservice.
 ## Deploy using `Makefile`
 Use `make clean` to clean up the containers
 
