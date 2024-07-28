@@ -9,10 +9,10 @@ Use `make clean` to clean up the containers
 Use `make run` ro run the containers
 Use `load-db` to load the manifest and the directory files
 
-## Deploy Topaz Engine using `docker-compose`
+## Prerequisites to running Topaz Engine using `docker-compose`
 
 - Use this to deploy topaz using docker-compose: https://www.topaz.sh/docs/deployment/docker-compose
-- Make sure u copy over the asset to have a set of resources and users setup. Use it as a template
+- Make sure u copy over the asset to have a set of resources and users setup. Use it as a template. The current roles and permissions in the existing manifest file look like this: ![image](./manifest.png) The agent and care-giver groupings look like this based on the json files: ![image](./agent.png) and ![image](./care-giver-group.png) We can also add per resource(in this case, a `file`) to add per-resource level tweaks, See: ![image](claims.png) and ![image](./journey.png)
 - To edit the policy to add your own custom policy try using https://www.topaz.sh/docs/command-line-interface/policy-cli/download directly
     - you would need first build the create a template using
     
@@ -143,7 +143,13 @@ The logs would show up like ![image](decision_logger.png)
 
 
 ## The cURL 
-To invoke the `GET /dummy` endpoint with a prefixed body we can use cURL
+To invoke the `GET /valid-agent` endpoint with a prefixed body we can use cURL
 ```
-curl --location 'localhost:8888/dummy'
+curl --location 'localhost:8888/valid-agent'
 ```
+
+This can be used to trigger a `403` 
+```
+curl --location 'localhost:8888/invalid-agent'
+```
+
