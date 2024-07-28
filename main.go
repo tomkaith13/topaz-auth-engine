@@ -8,6 +8,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -174,7 +175,7 @@ func main() {
 				w.Write([]byte(err.Error()))
 				return
 			}
-			// fmt.Printf("t response: %+v\n", tresponse)
+			fmt.Printf("t response: %+v\n", tresponse)
 
 			if !tresponse.Decisions[0].Is {
 				http.Error(w, "Gandalf: You shall not PPAAAAAASSS!!!!!", http.StatusForbidden)
@@ -196,6 +197,14 @@ func main() {
 			return
 		}
 
+	})
+
+	r.Get("/external", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("external called!!")
+		time.Sleep(1 * time.Second)
+		w.WriteHeader(http.StatusOK)
+		fmt.Println("external done!!")
+		return
 	})
 
 	http.ListenAndServe(":8888", r)
