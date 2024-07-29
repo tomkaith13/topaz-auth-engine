@@ -217,8 +217,6 @@ opa:
     paths:
       # []
       - /policies/bundle.tar.gz
-      # - /policies/bundle-normal.tar.gz
-      # - /policies/bundle-external.tar.gz
     skip_verification: true
   config:
     services:
