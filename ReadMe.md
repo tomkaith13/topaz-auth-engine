@@ -6,8 +6,9 @@ This repo deploys an `app` container along with the `topaz` container to do auth
 ## Deploy using `Makefile`
 Use `make clean` to clean up the containers
 
-Use `make run` ro run the containers
-Use `load-db` to load the manifest and the directory files
+Use `make run` ro run the containers.
+
+Use `load-db` to load the manifest and the directory files. This needs to be done once before running any checks using the authorizer.
 
 ## Prerequisites to running Topaz Engine using `docker-compose`
 
