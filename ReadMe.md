@@ -103,8 +103,8 @@ The current roles and permissions in the existing manifest file look like this: 
 <aside>
 👀 to clear all data in the DB, simply delete the bold.db instance in the `/db` directory. Restarting the container will create a new instance and then we simply need to reload the manifest, object and relations jsons using the `topaz directory` subcommand inside the container specified in https://www.topaz.sh/docs/deployment/docker-compose#load-sample-directory-data
 
-</aside>
 ## Decision Logger
+</aside>
 
 To enable a decision logger, we simply enable the following plugin in `opa` section of the config
 
