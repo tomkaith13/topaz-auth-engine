@@ -32,13 +32,13 @@ services:
   app:
     build: .       # Build the Go app from a Dockerfile in the current directory
     ports:
-      - 8888:8888  # Expose port 8080 for the Go app
+      - 8888:8888  # Expose port 8888 for the Go app
     depends_on:
-      - topaz
+      - topaz # Add topaz as a dependency
     networks:
       - my-network
     environment:
-      - TOPAZ_URL=https://topaz:8383/api/v2/authz/is
+      - TOPAZ_URL=https://topaz:8383/api/v2/authz/is # expose the authorizer as a url for the applicatio code to call
 networks:
   my-network:
     driver: bridge
