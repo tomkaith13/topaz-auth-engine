@@ -283,7 +283,7 @@ func main() {
 	})
 
 	// This endpoint is a way for the authz engine to call in external function when
-	// making a decision.
+	// making a decision. See hello-with-external.rego to understand how the authorizer uses it.
 	r.Get("/external", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("external called!!")
 
