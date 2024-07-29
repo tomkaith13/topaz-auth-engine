@@ -85,7 +85,7 @@ Use `load-db` to load the manifest and the directory files. This needs to be don
 - Next, hit `docker-compose up` to have the container running
 - Finally, we may need to add Objects, Relations or Permissions to the Directory module in Topaz which allows us to create the various entities there exists.
     - For this, we need to edit the `manifest` and the `data/*.json` files to edit the graph and its properties
-    - Then, we need to issue the following commands to apply it
+    - Then, we need to issue the following commands to apply it:
     
     ```bash
     docker compose exec topaz ./topaz directory set manifest --no-check -i /data/manifest.yaml
