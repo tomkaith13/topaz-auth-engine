@@ -11,9 +11,9 @@ Use `make run` ro run the containers.
 Use `load-db` to load the manifest and the directory files. This needs to be done once before running any checks using the authorizer.
 
 ## Prerequisites to running Topaz Engine using `docker-compose`
-
-- Use this to deploy topaz using docker-compose: https://www.topaz.sh/docs/deployment/docker-compose
 - Make sure u copy over the asset to have a set of resources and users setup. Use it as a template. 
+
+- policy creation and deployment. Use the following to build and export a policy bundle.
     
     ```bash
     policy templates apply policy-template
