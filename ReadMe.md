@@ -96,7 +96,7 @@ Use `load-db` to load the manifest and the directory files. This needs to be don
 
 
 If it all works out you should see this when trying to login to the topaz [dashboard](https://localhost:8080/ui/directory/model):
-The current roles and permissions in the existing manifest file look like this: ![image](./manifest.png) The agent and care-giver groupings look like this based on the json files: ![image](./agent.png) and ![image](./care-giver-group.png) We can also add per resource(in this case, a `file`) to add per-resource level tweaks, See: ![image](claims.png) and ![image](./journey.png)
+The current roles and permissions in the existing manifest file look like this: ![image](./manifest.png) The agent and care-giver groupings look like this based on the json files: ![image](./agent.png) and ![image](./care-giver-group.png) We can also add per resource(in this case, a `file`) level tweaks, See: ![image](claims.png) and ![image](./journey.png)
 - To edit the policy to add your own custom policy try using https://www.topaz.sh/docs/command-line-interface/policy-cli/download directly
     - you would need first build the create a template using
 
