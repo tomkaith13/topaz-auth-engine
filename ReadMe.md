@@ -36,8 +36,7 @@ Use `load-db` to load the manifest and the directory files
       REPOSITORY                        TAG     IMAGE ID      CREATED               SIZE  
       docker.io/library/default         latest  900c90346bd8  2024-07-26T13:51:17Z  748B  
       docker.io/my-org/my-policy        v0.1.1  3d179cb14a7d  2024-07-26T13:46:02Z  750B  
-      docker.io/bibin-org/bibin-policy  v0.1.1  d91ddd68dfe3  2024-07-05T14:43:51Z  762B  
-      docker.io/bibin-org/bibin-policy  latest  d91ddd68dfe3  2024-07-05T14:43:51Z  762B  
+      
     ➜  test-policies git:(main) ✗ policy save docker.io/my-org/my-policy:v0.1.1
     
     Resolved ref [docker.io/my-org/my-policy:v0.1.1].
@@ -155,5 +154,9 @@ curl --location 'localhost:8888/valid-agent'
 This can be used to trigger a `403` 
 ```
 curl --location 'localhost:8888/invalid-agent'
+```
+Also, you try this to have the authz engine call an external function. If you look at the logs in `app` you can see the decorator logs shown.
+```
+curl --location 'localhost:8888/check-external'
 ```
 
