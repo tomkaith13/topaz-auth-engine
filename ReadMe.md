@@ -12,9 +12,7 @@ Use `load-db` to load the manifest and the directory files
 ## Prerequisites to running Topaz Engine using `docker-compose`
 
 - Use this to deploy topaz using docker-compose: https://www.topaz.sh/docs/deployment/docker-compose
-- Make sure u copy over the asset to have a set of resources and users setup. Use it as a template. The current roles and permissions in the existing manifest file look like this: ![image](./manifest.png) The agent and care-giver groupings look like this based on the json files: ![image](./agent.png) and ![image](./care-giver-group.png) We can also add per resource(in this case, a `file`) to add per-resource level tweaks, See: ![image](claims.png) and ![image](./journey.png)
-- To edit the policy to add your own custom policy try using https://www.topaz.sh/docs/command-line-interface/policy-cli/download directly
-    - you would need first build the create a template using
+- Make sure u copy over the asset to have a set of resources and users setup. Use it as a template. 
     
     ```bash
     policy templates apply policy-template
@@ -95,11 +93,17 @@ Use `load-db` to load the manifest and the directory files
     ```
     
 
+
+
+If it all works out you should see this:
+The current roles and permissions in the existing manifest file look like this: ![image](./manifest.png) The agent and care-giver groupings look like this based on the json files: ![image](./agent.png) and ![image](./care-giver-group.png) We can also add per resource(in this case, a `file`) to add per-resource level tweaks, See: ![image](claims.png) and ![image](./journey.png)
+- To edit the policy to add your own custom policy try using https://www.topaz.sh/docs/command-line-interface/policy-cli/download directly
+    - you would need first build the create a template using
+
 <aside>
 👀 to clear all data in the DB, simply delete the bold.db instance in the `/db` directory. Restarting the container will create a new instance and then we simply need to reload the manifest, object and relations jsons using the `topaz directory` subcommand inside the container specified in https://www.topaz.sh/docs/deployment/docker-compose#load-sample-directory-data
 
 </aside>
-
 ## Decision Logger
 
 To enable a decision logger, we simply enable the following plugin in `opa` section of the config
