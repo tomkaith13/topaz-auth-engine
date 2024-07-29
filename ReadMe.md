@@ -160,3 +160,23 @@ Also, you try this to have the authz engine call an external function. If you lo
 curl --location 'localhost:8888/check-external'
 ```
 
+If you want to interact with the Topaz directly, you can using this
+```
+curl -k --location 'https://localhost:8383/api/v2/authz/is' --header 'Content-Type: application/json' --data-raw '{
+    "identity_context": {
+        "identity": "rick@the-citadel.com",
+        "type": "IDENTITY_TYPE_SUB"
+    },
+    "policy_context": {
+        "decisions": [
+            "allowed"
+        ],
+        "path": "policies.hello"
+    },
+    "resource_context": {
+        "object_id": "member.claims",
+        "object_type": "file",
+        "relation": "can_read"
+    }
+}'
+```
