@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "b128cea2-c599-4d57-83b7-071b4c5ba3a1",
+		"name": "topaz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13380006"
+	},
+	"item": [
+		{
+			"name": "topaz is call",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identity_context\": {\n        \"identity\": \"rick@the-citadel.com\",\n        \"type\": \"IDENTITY_TYPE_SUB\"\n    },\n    \"policy_context\": {\n        \"decisions\": [\n            \"allowed\"\n        ],\n        \"path\": \"policies.hello\"\n    },\n    \"resource_context\": {\n        \"object_id\": \"member.wallet\",\n        \"object_type\": \"file\",\n        \"relation\": \"can_read\",\n        \"asdasd\":\"asdasdasd\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:8383/api/v2/authz/is",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"api",
+						"v2",
+						"authz",
+						"is"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/valid-agent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/valid-agent",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"valid-agent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/check-external",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/check-external",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"check-external"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
