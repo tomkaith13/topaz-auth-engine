@@ -36,7 +36,7 @@ types:
       member: user | group#member
 
 
-  file:
+  capability:
     relations:
       owner:  user
       editor: user | group#member

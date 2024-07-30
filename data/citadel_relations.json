@@ -135,6 +135,13 @@
     },
     {
       "object_type": "group",
+      "object_id": "care-giver-group",
+      "relation": "member",
+      "subject_type": "user",
+      "subject_id": "jerry@the-smiths.com"
+    },
+    {
+      "object_type": "group",
       "object_id": "viewer",
       "relation": "member",
       "subject_type": "user",

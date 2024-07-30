@@ -1,13 +1,25 @@
 {
   "objects": [
     {
-      "type": "file",
+      "type": "capability",
       "id": "member.claims",
       "display_name": "member claims",
       "properties": {}
     },
     {
-      "type": "file",
+      "type": "capability",
+      "id": "member.benefits",
+      "display_name": "member benefits",
+      "properties": {}
+    },
+    {
+      "type": "capability",
+      "id": "member.wallet",
+      "display_name": "member wallet",
+      "properties": {}
+    },
+    {
+      "type": "capability",
       "id": "member.journey",
       "display_name": "member journey",
       "properties": {}

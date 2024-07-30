@@ -48,7 +48,7 @@ func main() {
 			},
 			"resource_context":{
 				"object_id":"member.claims",
-				"object_type":"file",
+				"object_type":"capability",
 				"relation":"agent"}
 			}
 		`)
@@ -130,7 +130,7 @@ func main() {
 			},
 			"resource_context":{
 				"object_id":"member.claims",
-				"object_type":"file",
+				"object_type":"capability",
 				"relation":"agent"}
 			}
 		`)
@@ -213,7 +213,7 @@ func main() {
 			},
 			"resource_context":{
 				"object_id":"member.claims",
-				"object_type":"file",
+				"object_type":"capability",
 				"relation":"agent"}
 			}
 		`)
