@@ -38,14 +38,9 @@ types:
 ### display_name: Capability ###
   capability:
     relations:
-      owner:  user
-      editor: user | group#member
-      viewer: user | user:* | group#member
       agent: user | group#member
       care-giver: user | group#member
 
     permissions:
-      can_share:  owner 
-      can_delete: can_share
-      can_write:  editor | care-giver
-      can_read:   viewer | agent | can_write 
+      can_write:  care-giver
+      can_read:   agent | can_write 

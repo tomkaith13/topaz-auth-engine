@@ -76,12 +76,6 @@
       }
     },
     {
-      "type": "group",
-      "id": "viewer",
-      "display_name": "viewer-group",
-      "properties": {}
-    },
-    {
       "type": "identity",
       "id": "jerry@the-smiths.com",
       "properties": {
@@ -163,12 +157,6 @@
         ],
         "status": "USER_STATUS_ACTIVE"
       }
-    },
-    {
-      "type": "group",
-      "id": "editor",
-      "display_name": "editor-group",
-      "properties": {}
     },
     {
       "type": "identity",
