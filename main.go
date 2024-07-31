@@ -297,7 +297,7 @@ func main() {
 
 	r.Get("/valid-agent-end-user-check", func(w http.ResponseWriter, r *http.Request) {
 		// Step 1. we parse JWT to get subject - the impersonated
-		// and the Impersonator.
+		// and actor  - the Impersonator.
 
 		//  We first check if the Impersonator has access to the Capability.
 
