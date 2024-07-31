@@ -318,9 +318,9 @@ func main() {
 			"resource_context":{
 				"object_id":"member.claims",
 				"object_type":"capability",
-				"relation":"agent"}
+				"relation":"can_read"} 
 			}
-		`)
+		`) // relation can be "agent | can_read | can_write"
 
 		topazURL := os.Getenv("TOPAZ_URL")
 
