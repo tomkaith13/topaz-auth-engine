@@ -19,13 +19,6 @@
     {
       "object_type": "capability",
       "object_id": "member.wallet",
-      "subject_type": "group",
-      "subject_id": "agent-group",
-      "subject_relation": "member"
-    },
-    {
-      "object_type": "capability",
-      "object_id": "member.wallet",
       "relation": "agent",
       "subject_type": "group",
       "subject_id": "agent-group",
