@@ -16,6 +16,7 @@ types:
     relations:
       ### display_name: user#manager ###
       manager: user
+      impersonator: user
 
     permissions:
       ### display_name: user#in_management_chain ###

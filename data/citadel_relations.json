@@ -132,6 +132,20 @@
       "relation": "member",
       "subject_type": "user",
       "subject_id": "jerry@the-smiths.com"
+    },
+    { 
+      "object_type": "user",
+      "object_id": "homer@the-simpsons.com",
+      "relation": "impersonator",
+      "subject_type": "user",
+      "subject_id": "jerry@the-smiths.com"
+    },
+    { 
+      "object_type": "user",
+      "object_id": "homer@the-simpsons.com",
+      "relation": "impersonator",
+      "subject_type": "user",
+      "subject_id": "beth@the-smiths.com"
     }
   ]
 }

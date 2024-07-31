@@ -56,6 +56,24 @@
 			"response": []
 		},
 		{
+			"name": "/invalid-agent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/invalid-agent",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"invalid-agent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "/check-external",
 			"request": {
 				"method": "GET",
@@ -68,6 +86,24 @@
 					"port": "8888",
 					"path": [
 						"check-external"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valid-agent-end-user-check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/valid-agent-end-user-check",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"valid-agent-end-user-check"
 					]
 				}
 			},

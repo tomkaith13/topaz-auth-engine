@@ -166,6 +166,16 @@
         "provider": "local",
         "verified": true
       }
+    },
+    {
+      "type": "user",
+      "id": "homer@the-simpsons.com",
+      "display_name": "Homer Simpson",
+      "properties": {
+        "email": "homer@the-simpsons.com",
+        "status": "USER_STATUS_ACTIVE",
+        "exp" : 123123123123123123123123123123123123123123
+      }
     }
   ]
 }
