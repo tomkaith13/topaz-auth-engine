@@ -10,25 +10,18 @@
     },
     {
       "object_type": "capability",
-      "object_id": "member.claims",
-      "relation": "owner",
-      "subject_type": "user",
-      "subject_id": "beth@the-smiths.com"
-    },
-    {
-      "object_type": "capability",
       "object_id": "member.benefits",
-      "relation": "agent",
+      "relation": "care-giver",
       "subject_type": "group",
-      "subject_id": "agent-group",
+      "subject_id": "care-giver-group",
       "subject_relation": "member"
     },
     {
       "object_type": "capability",
-      "object_id": "member.benefits",
-      "relation": "owner",
-      "subject_type": "user",
-      "subject_id": "beth@the-smiths.com"
+      "object_id": "member.wallet",
+      "subject_type": "group",
+      "subject_id": "agent-group",
+      "subject_relation": "member"
     },
     {
       "object_type": "capability",
@@ -37,20 +30,6 @@
       "subject_type": "group",
       "subject_id": "agent-group",
       "subject_relation": "member"
-    },
-    {
-      "object_type": "capability",
-      "object_id": "member.wallet",
-      "relation": "owner",
-      "subject_type": "user",
-      "subject_id": "beth@the-smiths.com"
-    },
-    {
-      "object_type": "capability",
-      "object_id": "member.journey",
-      "relation": "owner",
-      "subject_type": "user",
-      "subject_id": "beth@the-smiths.com"
     },
     {
       "object_type": "capability",
@@ -59,6 +38,258 @@
       "subject_type": "group",
       "subject_id": "care-giver-group",
       "subject_relation": "member"
+    },
+
+    {
+      "object_type": "capability-object",
+      "object_id": "claim1",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "homer@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "journey1",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "homer@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits1",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "homer@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet1",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "homer@the-simpsons.com"
+    },
+
+    {
+      "object_type": "capability-object",
+      "object_id": "claim2",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "marge@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "journey2",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "marge@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits2",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "marge@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet2",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "marge@the-simpsons.com"
+    },
+
+    {
+      "object_type": "capability-object",
+      "object_id": "claim3",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "lisa@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "journey3",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "lisa@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits3",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "lisa@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet3",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "lisa@the-simpsons.com"
+    },
+
+
+    {
+      "object_type": "capability-object",
+      "object_id": "claim4",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "bart@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "journey4",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "bart@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits4",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "bart@the-simpsons.com"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet4",
+      "relation": "owner",
+      "subject_type": "user",
+      "subject_id": "bart@the-simpsons.com"
+    },
+
+    {
+      "object_type": "capability-object",
+      "object_id": "claim1",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.claims",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "claim2",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.claims",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "claim3",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.claims",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "claim4",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.claims",
+      "subject_relation": "member"
+    },
+
+    {
+      "object_type": "capability-object",
+      "object_id": "journey1",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.journey",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "journey2",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.journey",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "journey3",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.journey",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "journey4",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.journey",
+      "subject_relation": "member"
+    },
+
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet1",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.wallet",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet2",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.wallet",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet3",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.wallet",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "wallet4",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.wallet",
+      "subject_relation": "member"
+    },
+
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits1",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.benefits",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits2",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.benefits",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits3",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.benefits",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability-object",
+      "object_id": "benefits4",
+      "relation": "parent",
+      "subject_type": "capability",
+      "subject_id": "member.benefits",
+      "subject_relation": "member"
     }
+
+    
+
   ]
 }

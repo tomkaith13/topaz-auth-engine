@@ -38,14 +38,19 @@ types:
 
   capability:
     relations:
-      owner:  user
-      editor: user | group#member
-      viewer: user | user:* | group#member
       agent: user | group#member
       care-giver: user | group#member
+      member: capability-object
 
     permissions:
-      can_share:  owner 
-      can_delete: can_share
-      can_write:  editor | care-giver
-      can_read:   viewer | agent | care-giver |can_write 
+      can_write:  care-giver
+      can_read:   agent | can_write
+
+
+  capability-object:
+    relations:
+      owner: user
+      parent: capability | capability#member
+    permissions:
+      can_write: owner | parent->can_write
+      can_read: can_write | parent->can_read

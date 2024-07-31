@@ -23,6 +23,102 @@
       "id": "member.journey",
       "display_name": "member journey",
       "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "journey1",
+      "display_name": "journey1",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "journey2",
+      "display_name": "journey2",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "journey3",
+      "display_name": "journey3",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "journey4",
+      "display_name": "journey4",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "claim1",
+      "display_name": "claim1",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "claim2",
+      "display_name": "claim2",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "claim3",
+      "display_name": "claim3",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "claim4",
+      "display_name": "claim4",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "wallet1",
+      "display_name": "wallet1",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "wallet2",
+      "display_name": "wallet2",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "wallet3",
+      "display_name": "wallet3",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "wallet4",
+      "display_name": "wallet4",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "benefits1",
+      "display_name": "benefits1",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "benefits2",
+      "display_name": "benefits2",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "benefits3",
+      "display_name": "benefits3",
+      "properties": {}
+    },
+    {
+      "type": "capability-object",
+      "id": "benefits4",
+      "display_name": "benefits4",
+      "properties": {}
     }
   ]
 }
