@@ -35,8 +35,8 @@ types:
       ### display_name: group#member ###
       member: user | group#member
 
-
-  file:
+### display_name: Capability ###
+  capability:
     relations:
       owner:  user
       editor: user | group#member
@@ -48,4 +48,4 @@ types:
       can_share:  owner 
       can_delete: can_share
       can_write:  editor | care-giver
-      can_read:   viewer | agent | care-giver |can_write 
+      can_read:   viewer | agent | can_write 

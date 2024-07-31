@@ -100,20 +100,6 @@
     },
     {
       "object_type": "group",
-      "object_id": "editor",
-      "relation": "member",
-      "subject_type": "user",
-      "subject_id": "morty@the-citadel.com"
-    },
-    {
-      "object_type": "group",
-      "object_id": "editor",
-      "relation": "member",
-      "subject_type": "user",
-      "subject_id": "summer@the-smiths.com"
-    },
-    {
-      "object_type": "group",
       "object_id": "agent-group",
       "relation": "member",
       "subject_type": "user",
@@ -128,6 +114,13 @@
     },
     {
       "object_type": "group",
+      "object_id": "agent-group",
+      "relation": "member",
+      "subject_type": "user",
+      "subject_id": "beth@the-smiths.com"
+    },
+    {
+      "object_type": "group",
       "object_id": "care-giver-group",
       "relation": "member",
       "subject_type": "user",
@@ -135,25 +128,10 @@
     },
     {
       "object_type": "group",
-      "object_id": "viewer",
-      "relation": "member",
-      "subject_type": "user",
-      "subject_id": "beth@the-smiths.com"
-    },
-    {
-      "object_type": "group",
-      "object_id": "viewer",
+      "object_id": "care-giver-group",
       "relation": "member",
       "subject_type": "user",
       "subject_id": "jerry@the-smiths.com"
-    },
-    {
-      "object_type": "group",
-      "object_id": "viewer",
-      "relation": "member",
-      "subject_type": "group",
-      "subject_id": "editor",
-      "subject_relation": "member"
     }
   ]
 }
