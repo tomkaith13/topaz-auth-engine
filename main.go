@@ -318,7 +318,9 @@ func main() {
 			"resource_context":{
 				"object_id":"member.claims",
 				"object_type":"capability",
-				"relation":"can_read"} 
+				"relation":"can_read",
+				"impersonated_id" : "homer@the-simpsons.com" 
+				} 
 			}
 		`) // relation can be "agent | can_read | can_write"
 
@@ -452,6 +454,87 @@ func main() {
 			return
 		}
 
+	})
+
+	r.Get("/valid-agent-end-user-check-compact", func(w http.ResponseWriter, r *http.Request) {
+		// Step 1. we parse JWT to get subject - the impersonated
+		// and actor  - the Impersonator.
+
+		//  We first check if the Impersonator has access to the Capability.
+
+		// TODO: Add parsing logic in JWT to fetch the payload shown below.
+		// For now, assume this payload is automagically constructed.
+
+		// this payload would check if the User in Identity Context can access The resource
+		jsonData := []byte(`
+		{
+			"identity_context":{
+				"identity":"beth@the-smiths.com",
+				"type":"IDENTITY_TYPE_SUB"
+			},
+			"policy_context":{
+				"decisions":["allowed"],
+				"path":"policies.impersonator"
+			},
+			"resource_context":{
+				"object_id":"member.claims",
+				"object_type":"capability",
+				"relation":"can_read",
+				"impersonated_id" : "homer@the-simpsons.com" 
+				} 
+			}
+		`) // relation can be "agent | can_read | can_write"
+
+		topazURL := os.Getenv("TOPAZ_URL")
+		if topazURL == "" {
+			// Handle the case where the environment variable is not set
+			fmt.Println("TOPAZ_URL environment variable is not set.")
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		fmt.Println("post body:", string(jsonData))
+		req, err := http.NewRequest("POST", topazURL, bytes.NewBuffer(jsonData))
+		if err != nil {
+			fmt.Println("Error creating request:", err)
+			return
+		}
+		req.Header.Set("Content-Type", "application/json")
+		// Create a transport that doesn't verify certificates - this is needed because of topaz's invalid certs and this is a POC
+		// For the real deal, we will need real certs
+		tr := &http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		}
+		client := &http.Client{Transport: tr}
+		resp, err := client.Do(req)
+		if err != nil {
+			fmt.Println("Error sending request:", err)
+			return
+		}
+		defer resp.Body.Close()
+		if resp.StatusCode == http.StatusOK {
+			tresponse := TopazResponse{}
+			fmt.Println("POST request successful!")
+
+			decoder := json.NewDecoder(resp.Body)
+			err := decoder.Decode(&tresponse)
+			if err != nil {
+				fmt.Println("Error reading response body:", err)
+				w.WriteHeader(http.StatusInternalServerError)
+				w.Write([]byte(err.Error()))
+				return
+			}
+			// fmt.Printf("t response: %+v\n", tresponse)
+
+			if !tresponse.Decisions[0].Is {
+				http.Error(w, "Gandalf: You shall not PPAAAAAASSS!!!!!", http.StatusForbidden)
+				return
+			}
+			w.WriteHeader(http.StatusOK)
+			w.Write([]byte("it works!!"))
+		} else {
+			http.Error(w, "Oops", http.StatusInternalServerError)
+			return
+		}
 	})
 
 	http.ListenAndServe(":8888", r)
