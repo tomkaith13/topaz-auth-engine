@@ -181,3 +181,4 @@ curl -k --location 'https://localhost:8383/api/v2/authz/is' --header 'Content-Ty
     }
 }'
 ```
+See the postman collection for all the endpoint usages.
