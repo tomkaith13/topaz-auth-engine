@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"identity_context\": {\n        \"identity\": \"rick@the-citadel.com\",\n        \"type\": \"IDENTITY_TYPE_SUB\"\n    },\n    \"policy_context\": {\n        \"decisions\": [\n            \"allowed\"\n        ],\n        \"path\": \"policies.hello\"\n    },\n    \"resource_context\": {\n        \"object_id\": \"member.wallet\",\n        \"object_type\": \"file\",\n        \"relation\": \"can_read\",\n        \"asdasd\":\"asdasdasd\"\n    }\n}",
+					"raw": "{\n    \"identity_context\": {\n        \"identity\": \"rick@the-citadel.com\",\n        \"type\": \"IDENTITY_TYPE_SUB\"\n    },\n    \"policy_context\": {\n        \"decisions\": [\n            \"allowed\"\n        ],\n        \"path\": \"policies.hello\"\n    },\n    \"resource_context\": {\n        \"object_id\": \"member.wallet\",\n        \"object_type\": \"capability\",\n        \"relation\": \"can_read\",\n        \"asdasd\":\"asdasdasd\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -104,6 +104,24 @@
 					"port": "8888",
 					"path": [
 						"valid-agent-end-user-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valid-agent-end-user-check-compact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/valid-agent-end-user-check-compact",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"valid-agent-end-user-check-compact"
 					]
 				}
 			},
