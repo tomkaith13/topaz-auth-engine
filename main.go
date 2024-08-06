@@ -606,6 +606,8 @@ func main() {
 				if relation.SubjectId == userImpersonator.ImpersonatorId {
 					createdTS := relation.CreatedAt
 					now := time.Now().UTC()
+					// If the Now - created_at is less than or equal to 15mins we assume we are good
+					// 15 mins can be configurable.
 					if now.Sub(createdTS) <= 15*time.Minute {
 						// this means we have not yet expired. so we dont need to add
 						w.WriteHeader(http.StatusOK)
@@ -626,10 +628,10 @@ func main() {
 				template.HTMLEscapeString(userImpersonator.UserId), template.HTMLEscapeString(userImpersonator.ImpersonatorId))
 			delreq, err := http.NewRequest("DELETE", deleteUrl, nil)
 
-			tr := &http.Transport{
-				TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-			}
-			client := &http.Client{Transport: tr}
+			// tr := &http.Transport{
+			// 	TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+			// }
+			// client := &http.Client{Transport: tr}
 			delresp, err := client.Do(delreq)
 			if err != nil {
 				fmt.Println("Error sending request:", err)
