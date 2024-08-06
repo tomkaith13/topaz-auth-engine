@@ -126,6 +126,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "add-user-with-impersonator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"homer@the-simpsons.com\",\n    \"impersonator_id\": \"beth@the-smiths.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/add-user-with-impersonator",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"add-user-with-impersonator"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
