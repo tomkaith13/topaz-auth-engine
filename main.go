@@ -27,6 +27,11 @@ type TopazDecision struct {
 	Is       bool   `json:"is"`
 }
 
+type AddUserImpersonator struct {
+	UserId         string `json:"user_id"`
+	ImpersonatorId string `json:"impersonator_id"`
+}
+
 func main() {
 	r := chi.NewRouter()
 
@@ -53,11 +58,11 @@ func main() {
 			}
 		`)
 
-		topazURL := os.Getenv("TOPAZ_URL")
+		topazURL := os.Getenv("TOPAZ_IS_URL")
 
 		if topazURL == "" {
 			// Handle the case where the environment variable is not set
-			fmt.Println("TOPAZ_URL environment variable is not set.")
+			fmt.Println("TOPAZ_IS_URL environment variable is not set.")
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
@@ -135,11 +140,11 @@ func main() {
 			}
 		`)
 
-		topazURL := os.Getenv("TOPAZ_URL")
+		topazURL := os.Getenv("TOPAZ_IS_URL")
 
 		if topazURL == "" {
 			// Handle the case where the environment variable is not set
-			fmt.Println("TOPAZ_URL environment variable is not set.")
+			fmt.Println("TOPAZ_IS_URL environment variable is not set.")
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
@@ -218,11 +223,11 @@ func main() {
 			}
 		`)
 
-		topazURL := os.Getenv("TOPAZ_URL")
+		topazURL := os.Getenv("TOPAZ_IS_URL")
 
 		if topazURL == "" {
 			// Handle the case where the environment variable is not set
-			fmt.Println("TOPAZ_URL environment variable is not set.")
+			fmt.Println("TOPAZ_IS_URL environment variable is not set.")
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
@@ -324,11 +329,11 @@ func main() {
 			}
 		`) // relation can be "agent | can_read | can_write"
 
-		topazURL := os.Getenv("TOPAZ_URL")
+		topazURL := os.Getenv("TOPAZ_IS_URL")
 
 		if topazURL == "" {
 			// Handle the case where the environment variable is not set
-			fmt.Println("TOPAZ_URL environment variable is not set.")
+			fmt.Println("TOPAZ_IS_URL environment variable is not set.")
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
@@ -485,10 +490,10 @@ func main() {
 			}
 		`) // relation can be "agent | can_read | can_write"
 
-		topazURL := os.Getenv("TOPAZ_URL")
+		topazURL := os.Getenv("TOPAZ_IS_URL")
 		if topazURL == "" {
 			// Handle the case where the environment variable is not set
-			fmt.Println("TOPAZ_URL environment variable is not set.")
+			fmt.Println("TOPAZ_IS_URL environment variable is not set.")
 			w.WriteHeader(http.StatusInternalServerError)
 			return
 		}
@@ -536,6 +541,27 @@ func main() {
 			return
 		}
 	})
+
+	// r.Post("/add-user-with-impersonator", func(w http.ResponseWriter, r *http.Request) {
+	// 	// We parse user id and impersonator id
+	// 	// We then check if user exists with impersonator using GET Object API
+	// 	// If exists and if exp is valid, we simply return without creating
+	// 	// Otherwise, we add user with impersonator relation using Object and Relation API
+
+	// 	// we parse request body
+	// 	var userImpersonator AddUserImpersonator
+
+	// 	defer r.Body.Close()
+	// 	err := json.NewDecoder(r.Body).Decode(&userImpersonator)
+	// 	if err != nil {
+	// 		http.Error(w, "Invalid body in POST", http.StatusBadRequest)
+	// 		return
+	// 	}
+
+	// 	// Check if user exists with relations
+	// 	req, err := http.NewRequest("GET", topazURL, nil)
+
+	// })
 
 	http.ListenAndServe(":8888", r)
 }

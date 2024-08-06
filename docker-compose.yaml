@@ -38,7 +38,7 @@ services:
     networks:
       - my-network
     environment:
-      - TOPAZ_URL=https://topaz:8383/api/v2/authz/is # expose the authorizer as a url for the applicatio code to call
+      - TOPAZ_IS_URL=https://topaz:8383/api/v2/authz/is # expose the authorizer as a url for the applicatio code to call
 networks:
   my-network:
     driver: bridge
