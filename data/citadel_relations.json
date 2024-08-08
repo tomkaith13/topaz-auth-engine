@@ -156,7 +156,7 @@
     },
     {
       "object_type": "group",
-      "object_id": "claims-admin",
+      "object_id": "almost-health-admin",
       "relation": "member",
       "subject_type": "user",
       "subject_id": "birdperson@the-citadel.com"

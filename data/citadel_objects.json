@@ -76,6 +76,12 @@
       "properties": {}
     },
     {
+      "type": "group",
+      "id": "almost-health-admin",
+      "display_name": "health almost admin group",
+      "properties": {}
+    },
+    {
       "type": "identity",
       "id": "summer@the-smiths.com",
       "properties": {

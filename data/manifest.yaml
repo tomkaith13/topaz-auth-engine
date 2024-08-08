@@ -44,10 +44,12 @@ types:
       deleter: user | group#member
       reader: user | group#member
       admin: user | group#member
+      almost-admin: user | group#member
 
     permissions:
-      can_create: creator | all
-      can_update: updater | all
+      can_create: creator | all | almost-all
+      can_update: updater | all | almost-all
       can_delete: deleter | all
-      can_read: reader | all
+      can_read: reader | all | almost-all
       all: admin
+      almost-all: almost-admin

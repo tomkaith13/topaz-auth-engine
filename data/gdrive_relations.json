@@ -63,6 +63,14 @@
       "subject_type": "group",
       "subject_id": "journey-updater",
       "subject_relation": "member"
+    },
+    {
+      "object_type": "capability",
+      "object_id": "member.health",
+      "relation": "almost-admin",
+      "subject_type": "group",
+      "subject_id": "almost-health-admin",
+      "subject_relation": "member"
     }
   ]
 }
