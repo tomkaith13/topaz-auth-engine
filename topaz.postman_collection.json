@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"identity_context\": {\n        \"identity\": \"rick@the-citadel.com\",\n        \"type\": \"IDENTITY_TYPE_SUB\"\n    },\n    \"policy_context\": {\n        \"decisions\": [\n            \"allowed\"\n        ],\n        \"path\": \"policies.hello\"\n    },\n    \"resource_context\": {\n        \"object_id\": \"member.wallet\",\n        \"object_type\": \"capability\",\n        \"relation\": \"can_read\",\n        \"asdasd\":\"asdasdasd\"\n    }\n}",
+					"raw": "{\n    \"identity_context\": {\n        \"identity\": \"rick@the-citadel.com\",\n        \"type\": \"IDENTITY_TYPE_SUB\"\n    },\n    \"policy_context\": {\n        \"decisions\": [\n            \"allowed\"\n        ],\n        \"path\": \"policies.hello\"\n    },\n    \"resource_context\": {\n        \"object_id\": \"member.claims\",\n        \"object_type\": \"capability\",\n        \"relation\": \"can_read\",\n        \"asdasd\":\"asdasdasd\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,7 +35,69 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "topaz is call as an admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identity_context\": {\n        \"identity\": \"squanchy@the-citadel.com\",\n        \"type\": \"IDENTITY_TYPE_SUB\"\n    },\n    \"policy_context\": {\n        \"decisions\": [\n            \"allowed\"\n        ],\n        \"path\": \"policies.impersonator\"\n    },\n    \"resource_context\": {\n        \"object_id\": \"member.health\",\n        \"object_type\": \"capability\",\n        \"relation\": \"can_delete\",\n        \"impersonated_id\": \"homer@the-simpsons.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8383/api/v2/authz/is",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8383",
+							"path": [
+								"api",
+								"v2",
+								"authz",
+								"is"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Grpc-Metadata-Aserto-Request-Id",
+							"value": "5b592095-558a-11ef-b5e8-0242c0a88002"
+						},
+						{
+							"key": "Grpc-Metadata-Content-Type",
+							"value": "application/grpc"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Aug 2024 13:30:19 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"decisions\": [\n        {\n            \"decision\": \"allowed\",\n            \"is\": true\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "/valid-agent",
@@ -122,6 +184,24 @@
 					"port": "8888",
 					"path": [
 						"valid-agent-end-user-check-compact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valid-admin-end-user-check-compact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/valid-admin-end-user-check-compact",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"valid-admin-end-user-check-compact"
 					]
 				}
 			},
