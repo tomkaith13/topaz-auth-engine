@@ -20,8 +20,20 @@
     },
     {
       "type": "group",
-      "id": "care-giver-group",
-      "display_name": "care giver group",
+      "id": "claims-reader",
+      "display_name": "claims reader group",
+      "properties": {}
+    },
+    {
+      "type": "group",
+      "id": "claims-updater",
+      "display_name": "claims updater group",
+      "properties": {}
+    },
+    {
+      "type": "group",
+      "id": "claims-admin",
+      "display_name": "claims admin group",
       "properties": {}
     },
     {
@@ -35,8 +47,32 @@
     },
     {
       "type": "group",
-      "id": "agent-group",
-      "display_name": "agent group",
+      "id": "wallet-reader",
+      "display_name": "wallet reader group",
+      "properties": {}
+    },
+    {
+      "type": "group",
+      "id": "wallet-updater",
+      "display_name": "wallet updater group",
+      "properties": {}
+    },
+    {
+      "type": "group",
+      "id": "health-admin",
+      "display_name": "health admin group",
+      "properties": {}
+    },
+    {
+      "type": "group",
+      "id": "health-reader",
+      "display_name": "health reader group",
+      "properties": {}
+    },
+    {
+      "type": "group",
+      "id": "journey-updater",
+      "display_name": "journey updater group",
       "properties": {}
     },
     {
@@ -165,6 +201,24 @@
         "kind": "IDENTITY_KIND_EMAIL",
         "provider": "local",
         "verified": true
+      }
+    },
+    {
+      "type": "user",
+      "id": "birdperson@the-citadel.com",
+      "display_name": "Bird Person",
+      "properties": {
+        "email": "birdperson@the-citadel.com",
+        "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "type": "user",
+      "id": "squanchy@the-citadel.com",
+      "display_name": "Squanchy",
+      "properties": {
+        "email": "squanchy@the-citadel.com",
+        "status": "USER_STATUS_ACTIVE"
       }
     },
     {

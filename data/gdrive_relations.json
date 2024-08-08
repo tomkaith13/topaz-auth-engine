@@ -3,33 +3,65 @@
     {
       "object_type": "capability",
       "object_id": "member.claims",
-      "relation": "agent",
+      "relation": "reader",
       "subject_type": "group",
-      "subject_id": "agent-group",
+      "subject_id": "claims-reader",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability",
+      "object_id": "member.claims",
+      "relation": "updater",
+      "subject_type": "group",
+      "subject_id": "claims-updater",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability",
+      "object_id": "member.claims",
+      "relation": "admin",
+      "subject_type": "group",
+      "subject_id": "claims-admin",
       "subject_relation": "member"
     },
     {
       "object_type": "capability",
       "object_id": "member.wallet",
-      "relation": "agent",
+      "relation": "reader",
       "subject_type": "group",
-      "subject_id": "agent-group",
+      "subject_id": "wallet-reader",
       "subject_relation": "member"
     },
     {
       "object_type": "capability",
-      "object_id": "member.journey",
-      "relation": "care-giver",
+      "object_id": "member.wallet",
+      "relation": "updater",
       "subject_type": "group",
-      "subject_id": "care-giver-group",
+      "subject_id": "wallet-updater",
       "subject_relation": "member"
     },
     {
       "object_type": "capability",
       "object_id": "member.health",
-      "relation": "care-giver",
+      "relation": "admin",
       "subject_type": "group",
-      "subject_id": "care-giver-group",
+      "subject_id": "health-admin",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability",
+      "object_id": "member.health",
+      "relation": "reader",
+      "subject_type": "group",
+      "subject_id": "health-reader",
+      "subject_relation": "member"
+    },
+    {
+      "object_type": "capability",
+      "object_id": "member.journey",
+      "relation": "updater",
+      "subject_type": "group",
+      "subject_id": "journey-updater",
       "subject_relation": "member"
     }
   ]

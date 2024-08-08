@@ -100,38 +100,59 @@
     },
     {
       "object_type": "group",
-      "object_id": "agent-group",
+      "object_id": "claims-reader",
       "relation": "member",
       "subject_type": "user",
       "subject_id": "rick@the-citadel.com"
     },
     {
       "object_type": "group",
-      "object_id": "agent-group",
+      "object_id": "wallet-reader",
       "relation": "member",
       "subject_type": "user",
       "subject_id": "morty@the-citadel.com"
     },
     {
       "object_type": "group",
-      "object_id": "agent-group",
+      "object_id": "health-reader",
       "relation": "member",
       "subject_type": "user",
       "subject_id": "beth@the-smiths.com"
     },
     {
       "object_type": "group",
-      "object_id": "care-giver-group",
+      "object_id": "claims-updater",
       "relation": "member",
       "subject_type": "user",
       "subject_id": "summer@the-smiths.com"
     },
     {
       "object_type": "group",
-      "object_id": "care-giver-group",
+      "object_id": "wallet-updater",
       "relation": "member",
       "subject_type": "user",
       "subject_id": "jerry@the-smiths.com"
+    },
+    {
+      "object_type": "group",
+      "object_id": "journey-updater",
+      "relation": "member",
+      "subject_type": "user",
+      "subject_id": "jerry@the-smiths.com"
+    },
+    {
+      "object_type": "group",
+      "object_id": "claims-admin",
+      "relation": "member",
+      "subject_type": "user",
+      "subject_id": "birdperson@the-citadel.com"
+    },
+    {
+      "object_type": "group",
+      "object_id": "health-admin",
+      "relation": "member",
+      "subject_type": "user",
+      "subject_id": "squanchy@the-citadel.com"
     },
     { 
       "object_type": "user",

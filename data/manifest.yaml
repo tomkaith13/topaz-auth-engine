@@ -39,9 +39,15 @@ types:
 ### display_name: Capability ###
   capability:
     relations:
-      agent: user | group#member
-      care-giver: user | group#member
+      creator: user | group#member
+      updater: user | group#member
+      deleter: user | group#member
+      reader: user | group#member
+      admin: user | group#member
 
     permissions:
-      can_write:  care-giver
-      can_read:   agent | can_write 
+      can_create: creator | all
+      can_update: updater | all
+      can_delete: deleter | all
+      can_read: reader | all
+      all: admin
