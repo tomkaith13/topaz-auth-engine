@@ -213,12 +213,30 @@
       }
     },
     {
+      "type": "identity",
+      "id": "birdperson@the-citadel.com",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
+      }
+    },
+    {
       "type": "user",
       "id": "squanchy@the-citadel.com",
       "display_name": "Squanchy",
       "properties": {
         "email": "squanchy@the-citadel.com",
         "status": "USER_STATUS_ACTIVE"
+      }
+    },
+    {
+      "type": "identity",
+      "id": "squanchy@the-citadel.com",
+      "properties": {
+        "kind": "IDENTITY_KIND_EMAIL",
+        "provider": "local",
+        "verified": true
       }
     },
     {

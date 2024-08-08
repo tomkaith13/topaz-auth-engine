@@ -37,6 +37,20 @@
     },
     {
       "object_type": "identity",
+      "object_id": "birdperson@the-citadel.com",
+      "relation": "identifier",
+      "subject_type": "user",
+      "subject_id": "birdperson@the-citadel.com"
+    },
+    {
+      "object_type": "identity",
+      "object_id": "squanchy@the-citadel.com",
+      "relation": "identifier",
+      "subject_type": "user",
+      "subject_id": "squanchy@the-citadel.com"
+    },
+    {
+      "object_type": "identity",
       "object_id": "CiRmZDA2MTRkMy1jMzlhLTQ3ODEtYjdiZC04Yjk2ZjVhNTEwMGQSBWxvY2Fs",
       "relation": "identifier",
       "subject_type": "user",
@@ -167,6 +181,13 @@
       "relation": "impersonator",
       "subject_type": "user",
       "subject_id": "beth@the-smiths.com"
+    },
+    { 
+      "object_type": "user",
+      "object_id": "homer@the-simpsons.com",
+      "relation": "impersonator",
+      "subject_type": "user",
+      "subject_id": "squanchy@the-citadel.com"
     }
   ]
 }
